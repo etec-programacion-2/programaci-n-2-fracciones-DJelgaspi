@@ -4,5 +4,7 @@
 package org.example
 
 fun main() {
-    println("Hola app!")
+    val fraccion = Fraccion(3, 5)
+
+    println("Fracción: ${fraccion}")           
 }
