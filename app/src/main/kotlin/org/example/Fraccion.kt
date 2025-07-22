@@ -31,6 +31,21 @@ class Fraccion(
         return Fraccion(nuevo_numerador, nuevo_denominador).simplificada()
     }
 
+    operator fun times(otra: Fraccion): Fraccion {
+        val nuevo_numerador = this._numerador * otra._numerador
+        val nuevo_denominador = this._denominador * otra._denominador
+        return Fraccion(nuevo_numerador, nuevo_denominador).simplificada()
+    }
+
+    operator fun div(otra: Fraccion): Fraccion {
+        if (otra._numerador == 0) {
+            throw ArithmeticException("División por cero no permitida")
+        }
+        val nuevo_numerador = this._numerador * otra._denominador
+        val nuevo_denominador = this._denominador * otra._numerador
+        return Fraccion(nuevo_numerador, nuevo_denominador).simplificada()
+    }
+
     fun obtenesValor(): String {
         return toString()
     }
